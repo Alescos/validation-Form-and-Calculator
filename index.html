@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icono.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <!-- ---------------------------------Nav-bar----------------------------------- -->
+    <nav>
+        <div class="logo_image">
+            <img src="images/calculadora.png" alt="">
+            <h1>calculadora</h1>
+        </div>
+        <div class="nav_options">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="calculator.html">Calculadora</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- -------------------------------------Form--------------------------------- -->
+    <main>
+        <form action="" class="form" id="form">
+            <!-- ----------------id group----------------- -->
+            <div class="form__group" id="group_id">
+                <label class="form__label" for="id">Número de indetificación</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="id" id="id" placeholder="Número de identificación">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">Ingrese un ID válido (min 7)</p>
+            </div>
+            <!-- ------------------name group------------------ -->
+            <div class="form__group" id="group_name">
+                <label class="form__label" for="fullName">Nombres y Apellidos</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="fullName" id="fullName" placeholder="Nombres y Appellidos">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">El campo no puede tener simbolos ni números</p>
+            </div>
+            <!-- -------------.........phone group---------------------- -->
+            <div class="form__group" id="group_phone">
+                <label class="form__label" for="phone">Celular</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="phone" id="phone" placeholder="Celular">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">Ingrese un npumero de celular válido (min-10)</p>
+            </div>
+            <!-- ----------------------email group-------------------------- -->
+            <div class="form__group" id="group_email">
+                <label class="form__label" for="email">Email</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="email" id="email" placeholder="Email">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">Por favor ingrese un correo electrónico válido</p>
+            </div>
+            <!-- ------------------------area group------------------------ -->
+            <div class="form__group" id="group_area">
+                <label class="form__label" for="area">Área/operación</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="area" id="area" placeholder="Área/operación">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">Por favor solo ingrese letras</p>
+            </div>
+            <!-- -----------------------position group------------------- -->
+            <div class="form__group" id="group_position">
+                <label class="form__label" for="position">Cargo</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="position" id="position" placeholder="Cargo">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">Por favor solo ingrese letras</p>
+            </div>
+            <!-- ------------------------location group------------------------ -->
+            <div class="form__group" id="group_location">
+                <label class="form__label" for="location">Indicanos donde te encuentras?</label>
+                <div class="form__group-input">
+                    <input type="text" list="location-options" class="form__input" name="location" id="location" placeholder="Indicanos donde te encuentras?">
+                    <datalist id="location-options">
+                        <option value="Bogotá">Bogotá</option>
+                        <option value="Medellín">Medellín</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Barranquilla">Barranquilla</option>
+                        <option value="Cartagena">Cartagena</option>
+                        <option value="Otra ciudad/parte dentro de Colombia">Otra ciudad/parte dentro de Colombia</option>
+                    </datalist>
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">El campo no puede estar vacío</p>
+            </div>
+            <!-- --------------------dateTime group---------------------------------- -->
+            <div class="form__group" id="group_dateTime">
+                <label class="form__label" for="dateTime">Horario en el que te podemos contactar</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="dateTime" id="dateTime" placeholder="Horario en el que te podemos contactar">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <p class="form__input-error">Ingrese la hora en formato 24h y HH:MM</p>
+            </div>
+            <!-- ------------------------message alert--------------------------------- -->
+            <div class="form__message" id="form__message">
+                <p><i class="fas fa-exclamation-triangle"></i><b>Error:</b> Por favor diligencie el formulario correctamente</p>
+            </div>
+            <!-- -------------------------btn submit group------------------------------ -->
+            <div class="form__group form__group-btn-submit">
+                <button type="submit" class="form__btn">Enviar</button>
+                <p class="form__message-success" id="form__message-success">Se ha enviado la información correctamente</p>
+            </div>
+        </form>
+    </main>
+    <!-- -----------------------------Footer----------------------------------- -->
+    <footer>
+        <div class="option">Terminos y condiciones</div>
+        <div class="option contact"><a href="mailto:Contacto@mail.com">Contacto@mail.com</a></div>
+    </footer>
+    <!-- ---------Scripts------ -->
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
