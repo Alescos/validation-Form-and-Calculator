@@ -10,6 +10,7 @@ let value2="";
 let value3=0;
 let operationName="";
 let operation="";
+let itsComplete=false;
 let result=0;
 
 
@@ -66,32 +67,42 @@ calculator_btn.forEach(button => {
     button.addEventListener('click',()=>{
         let digit=parseInt(button.value)
         if( !isNaN(digit)){
-            if (operation=="") {
-                if (!value1) {
-                    clear();
-                }
+            if (!operation) {
                 value1+=button.value;
                 screen.textContent=" ";
                 screen.textContent+=value1;
+            }else if(itsComplete){
+                value1=result;
+                result=0;
+                itsComplete=false;
+                value2+=button.value;
+                screen.textContent=" ";
+                screen.textContent=value1+operationName+value2;
             }else{
                 value2+=button.value;
                 screen.textContent=" ";
-                screen.textContent=value1+operationName+value2
+                screen.textContent=value1+operationName+value2   
             }
         }
         else{
             if (button.value!="calcular") {
-                operation=button.value;
-                operationName=button.name;
-                screen.textContent+=operationName;
-                if (operation=="clear") {
+                if(operation && button.value!="clear"){
+                    alert('Solo puedes realizar una operación a la vez');
+                }else if (button.value=="clear") {
                     clear();
                 }
+                else{
+                    operation=button.value;
+                    operationName=button.name;
+                    screen.textContent+=operationName;
+                }
+                
             }else{
                 value1=parseInt(value1);
                 value2=parseInt(value2);
                 result=window[operation](value1,value2);
                 screen.textContent=result;
+                itsComplete=true;
             }
 
         }
